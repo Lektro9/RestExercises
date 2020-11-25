@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link
+      rel="stylesheet"
+      href="plugin/highlight/monokai.css"
+      id="highlight-theme"
+    />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h2 class="r-fit-text">REST</h2>
+          <h5 class="fragment r-fit-text">"REpresentational State Transfer"</h5>
+        </section>
+        <section>
+          <div class="r-stack">
+            <img class="fragment r-stretch" src="./img/ClientServer.png" />
+            <img class="fragment r-stretch" src="./img/RequestHigh.png" />
+          </div>
+        </section>
+        <section>
+          <img class="r-stretch" src="./img/methods.png" />
+        </section>
+        <section>
+          <h3>Beispiel Request (POST)</h3>
+          <pre>
+			<code data-trim data-noescape>
+				POST /test HTTP/1.1
+				Host: foo.example
+				Content-Type: application/x-www-form-urlencoded
+				Content-Length: 27
+
+				field1=value1&field2=value2
+			</code>
+		</pre>
+        </section>
+        <section>
+          <h3>XML</h3>
+          <pre class="fragment"><code data-trim>
+					<?xml version="1.0" encoding="UTF-8"?>
+					- <note>
+						<to>Tove</to>
+						<from>Jani</from>
+						<heading>Reminder</heading>
+						<body>Don't forget me this weekend!</body>
+					  </note> 
+				</code></pre>
+          <h3 class="fragment">JSON</h3>
+          <pre class="fragment"><code data-trim>
+					{
+						"note": 
+						{
+							"to": "Tove",
+							"from": "Jani",
+							"heading": "Reminder",
+							"body": "Don't forget me this weekend!"
+						}
+					}
+				</code></pre>
+        </section>
+        <section>
+          <img class="r-stretch" src="./img/ServerHigh.png" />
+        </section>
+        <section>
+          <h3>Populäre Web-Frameworks</h3>
+          <ul>
+            <li class="fragment fade-out" data-fragment-index="1">
+              JAX-RS (Java)<img
+                style="margin: 0px"
+                width="100px"
+                src="./img/jax.png"
+              />
+            </li>
+            <li class="fragment highlight-red" data-fragment-index="1">
+              express js (Node js - JavaScript)<img
+                style="margin: 0px"
+                width="80px"
+                src="./img/express.png"
+              />
+            </li>
+            <li class="fragment fade-out" data-fragment-index="1">
+              flask (Python)
+              <img style="margin: 0px" width="30px" src="./img/flask.png" />
+            </li>
+            <li class="fragment fade-out" data-fragment-index="1">
+              Django (Python)<img
+                style="margin: 0px"
+                width="100px"
+                src="./img/django.png"
+              />
+            </li>
+            <li class="fragment fade-out" data-fragment-index="1">
+              Spring Boot (Java)<img
+                style="margin: 0px"
+                width="100px"
+                src="./img/spring.png"
+              />
+            </li>
+            <li class="fragment fade-out" data-fragment-index="1">
+              Laravel (PHP)<img
+                style="margin: 0px"
+                width="80px"
+                src="./img/laravel.png"
+              />
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h3>Beispielanforderungen</h3>
+          <img class="r-stretch" src="./img/anforderungen.png" />
+        </section>
+        <section>
+          <table>
+            <tr>
+              <th>Methode</th>
+              <th>Schnittstelle</th>
+              <th>Atkion</th>
+            </tr>
+            <tr>
+              <td>GET</td>
+              <td>/personen</td>
+              <td>Personen verschicken</td>
+            </tr>
+            <tr>
+              <td>POST</td>
+              <td>/personen</td>
+              <td>Personen verschicken</td>
+            </tr>
+            <tr>
+              <td>PUT</td>
+              <td>/personen</td>
+              <td>Personen verschicken</td>
+            </tr>
+          </table>
+        </section>
+        <section>
+          <h3>Aufgabe:</h3>
+          <ol>
+            <li>Erfrage vom Server alle Personen ab</li>
+            <li>Erfrage vom Server alle Personen ab</li>
+          </ol>
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>
